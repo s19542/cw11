@@ -22,7 +22,8 @@ namespace cw11.Controllers
         [HttpGet]
         public IActionResult GetDoctor()
         {
-            return Ok(_hospitalDbContext.Doctors.ToList());
+            return Ok();
+           // return Ok(_hospitalDbContext.Doctor.ToList());
         }
 
     }
