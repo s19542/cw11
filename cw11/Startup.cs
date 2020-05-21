@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using cw11.Models;
+using cw11.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +25,7 @@ namespace cw11
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IHospitalDbService, HospitalDbService>();
             services.AddDbContext<HospitalDbContext>(options => {
                 options.UseSqlServer("Data Source=db-mssql;Initial Catalog=s19542;Integrated Security=True");
             }); 
